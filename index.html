@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center"><strong>Welcome to Rock-Paper-Scissors!</strong></h1>
+      <h2 class="text-center">Enter your name to start the game</h2>
+    </div>
+	  <div class="formPanel"> 
+      <form id="name-form">
+        <input type="text" id="name-input" placeholder="Your Name">
+        <input id="add-name" type="submit" value="Submit">
+      </form>
+    </div>
+		<div class="panel panel-default">
+		  <div class="row">
+		    <div class="col-lg-4 col-md-4 col-sm-4">
+		      <div class="panel panel-default playerPanel" id="playerPanel1">
+		        <div class="panel-heading panelName">
+							<h3 class="panel-title text-center" id="playerOneName"></h3>
+						</div>
+		          <div class="panel-body panelOption text-center">
+		            <span class="option">Rock</span>
+		          </div>
+		          <div class="panel-body panelOption text-center">
+		            <div class="option">Paper</div>
+		          </div>
+		          <div class="panel-body panelOption text-center">
+		            <div class="option">Scissors</div>
+		          </div>
+		          <div class="panel-body panelStats text-center">
+		            <div class="stats" id="player1Stats"></div>
+		          </div>
+		      </div>
+		    </div>
+		        
+		        <!-- Game Outcome Section -->
+		        <div class="col-lg-4 col-md-4 col-sm-4">
+		            <div class="panel panel-default gamePanel">
+		            	<h3 class="panel-title text-center" id="waitingNotice"></h3>
+		            	<h3 class="panel-title text-center" id="roundOutcome">Rock-Paper-Scissors</h3>
+		            </div>
+		        </div> <!-- End Game Outcome Section -->
+		        
+		        <!-- Player 2 Section -->
+		        <div class="col-lg-4 col-md-4 col-sm-4">
+		            <div class="panel panel-default playerPanel" id="playerPanel2">
+		                <div class="panel-heading panelName">
+							<h3 class="panel-title text-center" id="playerTwoName"></h3>
+						</div>
+
+		                <div class="panel-body panelOption text-center">
+		                	<div class="option">Rock</div>
+		                </div>
+
+		                <div class="panel-body panelOption text-center">
+		                	<div class="option">Paper</div>
+		                </div>
+
+		                <div class="panel-body panelOption text-center">
+		                	<div class="option">Scissors</div>
+		                </div>
+
+
+		                <div class="panel-body panelStats text-center">
+		                	<div class="stats" id="player2Stats"></div>
+		                </div>
+		            </div>
+		        </div>
+		        
+		    </div>
+		</div>
+    <div class="row">
+	    <div class="col-lg-8 col-md-8 col-sm-8">
+	    	<div id="chatDisplay"></div>
+	    </div>
+		  <div class="col-lg-4 col-md-4 col-sm-4"> 
+		    <div class="chatInput">
+		    	<div class="chatLabel">Type Your Message!</div>
+					<div class="chatPanel"> 
+						<form id="chat-form">
+							<textarea type="text" id="chat-input"></textarea>
+							<input id="chat-send" type="submit" value="Send">
+						</form>
+					</div>
+				</div>
+	    </div>
+    </div>
+    
+	  <div class="row">
+	    <div id="footerSpacer"></div>
+	    <div class="footer navbar-fixed-bottom" id="footerPanel"></div>
+	  </div>
+	</div>
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyC1Gvd8L9WsV8vNGkH7zhRN1mUAAogxp6s",
+      authDomain: "rps-game-8f239.firebaseapp.com",
+      databaseURL: "https://rps-game-8f239.firebaseio.com",
+      projectId: "rps-game-8f239",
+      storageBucket: "rps-game-8f239.appspot.com",
+      messagingSenderId: "817942569401"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
